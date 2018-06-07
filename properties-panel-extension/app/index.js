@@ -52,7 +52,7 @@ function openDiagram(xml) {
 
 // logging history
 
-var myObj, i, j, x = "<ul style='border: 1px solid black'>";
+var myObj, i, j, x = "<ul style='border: 1px solid black'><br>";
   /*
 myObj = {
     "name":"John",
@@ -71,10 +71,7 @@ var myObj= processhistory;
    
 for (i in myObj.process.history.historyEntries) {
 
-  function focusElement(){
-    alert('hgf');
-  }
-    x += "<h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
+    x += "<div class=history-list  style='border: 1px solid rgb(165, 77, 143)'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
   // x += '<h3><a  onclick= "function(){alert('hello');}" > '+myObj.process.history.historyEntries[i].name +"</a></h3>";
    
    //x += "<div id="+ myObj.process.history.historyEntries[i].type  +"><strong>"  +"<strong></div>";
@@ -84,7 +81,7 @@ for (i in myObj.process.history.historyEntries) {
     x += "<li> Name: " + myObj.process.history.historyEntries[i].name + "</li>";
     x += "<li> Type: " + myObj.process.history.historyEntries[i].type + "</li>";
     x += "<li>Begin:" + myObj.process.history.historyEntries[i].begin + "</li>";
-    x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li>";
+    x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li></div><br>";
     
     /*
     for (j in myObj.cars[i].models) {

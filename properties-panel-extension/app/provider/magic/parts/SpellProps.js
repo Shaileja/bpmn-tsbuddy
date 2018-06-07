@@ -129,7 +129,7 @@ export default function(group, element) {
     label : 'Permission',
     modelProperty : 'permission'
   }));
-
+/*
     group.entries.push(entryFactory.textField({
       id : 'spell',
       description : 'Apply a black magic spell',
@@ -137,5 +137,5 @@ export default function(group, element) {
       modelProperty : 'spell'
     }));
     
-
+*/
 }
