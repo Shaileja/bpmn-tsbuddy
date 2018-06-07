@@ -53,15 +53,18 @@ function createGeneralTabGroups(element, bpmnFactory, elementRegistry, translate
 }
 
 // Create the custom magic tab
-function createMagicTabGroups(element, elementRegistry) {
+function  createMagicTabGroups(element,translate,elementRegistry){
 
   // Create a group called "Black Magic".
   var blackMagicGroup = {
     id: 'black-magic',
-    label: 'Black Magic',
+    label: 'Custom Properties',
     entries: []
   };
 
+  idProps(blackMagicGroup, element, translate);
+  nameProps(blackMagicGroup, element, translate);
+  processProps(blackMagicGroup, element, translate);
   // Add the spell props to the black magic group.
   spellProps(blackMagicGroup, element);
 
@@ -87,13 +90,13 @@ export default function MagicPropertiesProvider(
     // The "magic" tab
     var magicTab = {
       id: 'magic',
-      label: 'Magic',
-      groups: createMagicTabGroups(element, elementRegistry)
+      label: 'Custom Tab',
+      groups: createMagicTabGroups(element,translate,elementRegistry)
     };
 
     // Show general + "magic" tab
     return [
-      generalTab,
+      //generalTab,
       magicTab
     ];
   };

@@ -19,7 +19,7 @@ function getObject(theObject) {
   else
   {
       for(var prop in theObject) {
-          console.log(prop + ': ' + theObject[prop]);
+         // console.log(prop + ': ' + theObject[prop]);
           field.push(prop);
           if(theObject[prop] instanceof Object || theObject[prop] instanceof Array)
               result = getObject(theObject[prop]);
@@ -136,5 +136,6 @@ export default function(group, element) {
       label : 'Spell',
       modelProperty : 'spell'
     }));
+    
 
 }
