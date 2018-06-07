@@ -1,6 +1,6 @@
-import MagicPropertiesProvider from './MagicPropertiesProvider';
+import CustomPropertiesProvider from './CustomPropertiesProvider';
 
 export default {
   __init__: [ 'propertiesProvider' ],
-  propertiesProvider: [ 'type', MagicPropertiesProvider ]
+  propertiesProvider: [ 'type', CustomPropertiesProvider ]
 };

@@ -11,7 +11,6 @@ import {
 
 import diagramXML from '../resources/newDiagram.bpmn';
 
-
 var container = $('#js-drop-zone');
 
 var bpmnModeler = new BpmnModeler({

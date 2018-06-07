@@ -81,17 +81,16 @@ export default function(group, element) {
       modelProperty : prop
     }));
   }
+
   group.entries.push(entryFactory.selectBox({
     id : 'history',
     description : 'history',
     label : 'history entries',
     modelProperty : 'history',
-
-
-
     selectOptions: hist,
     emptyParameter: false,
   }));
+  
   group.entries.push(entryFactory.textField({
     id : 'title',
     description : 'Add title',
