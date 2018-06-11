@@ -1,6 +1,6 @@
 {"process" : {
     "state" : {
-        "tokens" : []
+        "tokens" : [{"name":"Start" ,"value":"Start"},{"name":"Stop" ,"value":"Stop"},{"name":"Request" ,"value":"Request"},{"name":"Review" ,"value":"Review"}]
     },
     "history" : {
         "historyEntries" : [ 

@@ -13,6 +13,8 @@ import diagramXML from '../resources/newDiagram.bpmn';
 
 var container = $('#js-drop-zone');
 
+
+var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 var bpmnModeler = new BpmnModeler({
   container: '#js-canvas',
   propertiesPanel: {
@@ -48,10 +50,10 @@ function openDiagram(xml) {
         .removeClass('with-error')
         .addClass('with-diagram');
     }
-
+console.log(getBusinessObject);
 // logging history
 
-var myObj, i, j, x = "<ul style='border: 1px solid black'><br>";
+var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8;'><br>";
   /*
 myObj = {
     "name":"John",
@@ -70,7 +72,7 @@ var myObj= processhistory;
    
 for (i in myObj.process.history.historyEntries) {
 
-    x += "<div class=history-list  style='border: 1px solid rgb(165, 77, 143)'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
+    x += "<div class=history-list  style='border: 1px solid #CCC'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
   // x += '<h3><a  onclick= "function(){alert('hello');}" > '+myObj.process.history.historyEntries[i].name +"</a></h3>";
    
    //x += "<div id="+ myObj.process.history.historyEntries[i].type  +"><strong>"  +"<strong></div>";

@@ -97,7 +97,7 @@ export default function CustomPropertiesProvider(
     // Show general + "magic" tab
     return [
       //generalTab,
-      magicTab
+      magicTab//,generalTab
     ];
   };
 }

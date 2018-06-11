@@ -4,9 +4,13 @@ import {
   is
 } from 'bpmn-js/lib/util/ModelUtil';
 
+import processhistory from '../../../descriptors/processhistory';
+var myObj= processhistory;
 
-
-
+var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
+ 
+var schema = processhistory;
+var state_tokens = schema.process.state.tokens;
 
 var field = [];
 function getObject(theObject) {
@@ -36,7 +40,7 @@ function getObject(theObject) {
         "createdAt" : 1527589244347.0,
         "finishedAt" : 1527589528464.0,
     
-    "properties" : {}
+    //"properties" : {}
 }};
 
 var hist = [ 
@@ -68,10 +72,26 @@ var hist = [
       "end" : 1527589528464.0
   }
 ];
+
+var role= [ 
+  {
+      "name" : "requestor",
+      'value': "requestor",
+     
+  },  {
+    "name" : "approver",
+    'value': "approver",
+   
+}];
+
+var view = {}
 var result = getObject(myObject);
 export default function(group, element) {
+
   // Only return an entry, if the currently selected
   // element is a start event.
+
+  /*
   for(var k=0;k< field.length;k++){
     var prop = field[k];
     group.entries.push(entryFactory.textField({
@@ -81,16 +101,41 @@ export default function(group, element) {
       modelProperty : prop
     }));
   }
-
-  group.entries.push(entryFactory.selectBox({
-    id : 'history',
-    description : 'history',
-    label : 'history entries',
-    modelProperty : 'history',
-    selectOptions: hist,
+*/
+  for(var index=0;index<role.length;index++){
+    
+  group.entries.push(entryFactory.checkbox({
+    id : role[index].name+'_view',
+    description :role[index].name+'_view',
+    label : role[index].name+' view',
+    modelProperty : role[index].name+'_view',
+   // selectOptions: view,
     emptyParameter: false,
   }));
+    }
+
+  group.entries.push(entryFactory.selectBox({
+    id : 'role',
+    description : 'role',
+    label : 'Role',
+    modelProperty : 'role',
+    selectOptions: role,
+    emptyParameter: false,
+  }));
+
+  group.entries.push(entryFactory.textField({
+    id : 'permission',
+    description : 'Permission',
+    label : 'Permission',
+    modelProperty : 'permission'
+  }));
   
+  group.entries.push(entryFactory.textField({
+    id : 'WF_ITEM',
+    description : 'work flow item',
+    label : 'WF_ITEM',
+    modelProperty : 'WF_ITEM'
+  }));
   group.entries.push(entryFactory.textField({
     id : 'title',
     description : 'Add title',
@@ -98,24 +143,40 @@ export default function(group, element) {
     modelProperty : 'title'
   }));
 
+group.entries.push(entryFactory.selectBox({
+  id : 'state',
+  description : 'state',
+  label : 'State',
+  modelProperty : 'state',
+  selectOptions: state_tokens,
+  emptyParameter: false,
+}));
+
+group.entries.push(entryFactory.textBox({
+  id : 'Description',
+  description : 'Description',
+  label : 'Description',
+  modelProperty : 'Description'
+}));
+ /*
+ 
+  
+  
+
   group.entries.push(entryFactory.textField({
     id : 'description',
     description : 'Add description',
     label : 'Description',
     modelProperty : 'description'
   }));
-  group.entries.push(entryFactory.textField({
-    id : 'WF_ITEM',
-    description : 'Add work flow item',
-    label : 'WF_ITEM',
-    modelProperty : 'WF_ITEM'
-  }));
+  
   group.entries.push(entryFactory.textField({
     id : 'datetime',
     description : 'datetime',
     label : 'DateTime',
     modelProperty : 'datetime'
   }));
+ 
   group.entries.push(entryFactory.textField({
     id : 'role',
     description : 'role',
@@ -123,18 +184,24 @@ export default function(group, element) {
     modelProperty : 'role'
   }));
   group.entries.push(entryFactory.textField({
+    id : 'view',
+    description : 'view',
+    label : 'view',
+    modelProperty : 'view'
+  }));
+  group.entries.push(entryFactory.textField({
     id : 'permission',
     description : 'Permission',
     label : 'Permission',
     modelProperty : 'permission'
   }));
-/*
+
     group.entries.push(entryFactory.textField({
       id : 'spell',
       description : 'Apply a black magic spell',
       label : 'Spell',
       modelProperty : 'spell'
     }));
-    
-*/
+    */ 
+
 }

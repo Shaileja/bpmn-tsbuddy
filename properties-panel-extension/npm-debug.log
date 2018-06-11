@@ -10,8 +10,8 @@
 6 silly lifecycle bpmn-js-example-properties-panel-extension@0.0.0~predev: no script for predev, continuing
 7 info lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: bpmn-js-example-properties-panel-extension@0.0.0
 8 verbose lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: unsafe-perm in lifecycle true
-9 verbose lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: PATH: /home/shaileja/.nvm/versions/node/v6.9.1/lib/node_modules/npm/bin/node-gyp-bin:/home/shaileja/bpmn-tsbuddy/bpmn-tsbuddy/properties-panel-extension/node_modules/.bin:/home/shaileja/.nvm/versions/node/v6.9.1/bin:/home/shaileja/bin:/home/shaileja/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-10 verbose lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: CWD: /home/shaileja/bpmn-tsbuddy/bpmn-tsbuddy/properties-panel-extension
+9 verbose lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: PATH: /home/shaileja/.nvm/versions/node/v6.9.1/lib/node_modules/npm/bin/node-gyp-bin:/home/shaileja/Desktop/tsbuddy/bpmn-tsbuddy/properties-panel-extension/node_modules/.bin:/home/shaileja/.nvm/versions/node/v6.9.1/bin:/home/shaileja/bin:/home/shaileja/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: CWD: /home/shaileja/Desktop/tsbuddy/bpmn-tsbuddy/properties-panel-extension
 11 silly lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: Args: [ '-c', 'grunt auto-build' ]
 12 silly lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: Returned: code: 6  signal: null
 13 info lifecycle bpmn-js-example-properties-panel-extension@0.0.0~dev: Failed to exec dev script
@@ -26,7 +26,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid bpmn-js-example-properties-panel-extension@0.0.0
-16 verbose cwd /home/shaileja/bpmn-tsbuddy/bpmn-tsbuddy/properties-panel-extension
+16 verbose cwd /home/shaileja/Desktop/tsbuddy/bpmn-tsbuddy/properties-panel-extension
 17 error Linux 4.13.0-43-generic
 18 error argv "/home/shaileja/.nvm/versions/node/v6.9.1/bin/node" "/home/shaileja/.nvm/versions/node/v6.9.1/bin/npm" "run" "dev"
 19 error node v6.9.1
