@@ -5,28 +5,50 @@
     "history" : {
         "historyEntries" : [ 
             {
+                "user" : "Joe Harris",
+                "role" : "EMP_SELF",
                 "name" : "Start",
                 "type" : "startEvent",
-                "begin" : 1527589244348.0,
+                "begin" : 1527589244347.0,
                 "end" : 1527589244354.0
             }, 
             {
-                "name" : "Request",
+                "user" : "Joe Harris",
+                "role" : "EMP_SELF",
+                "name" : "Application_Create_Edit",
                 "type" : "userTask",
                 "begin" : 1527589244354.0,
                 "end" : 1527589474782.0
+            },
+            {
+                "user" : "Joe Harris",
+                "role" : "EMP_SELF",
+                "name" : "Application_Submit",
+                "type" : "Action",
+                "begin" : 1527589244382.0,
+                "end" : 1527589474783.0
+            },
+            {
+                "user" : "Tom Brown",
+                "role" : "HR_MANAGER",
+                "name" : "Application_Review",
+                "type" : "userTask",
+                "begin" : 1527589245354.0,
+                "end" : 1527589245782.0
             }, 
             {
-                "name" : "Review",
-                "type" : "userTask",
-                "begin" : 1527589474782.0,
-                "end" : 1527589528463.0
+                "user" : "Tom Brown",
+                "role" : "HR_MANAGER",
+                "name" : "Application_Approve",
+                "type" : "Action",
+                "begin" : 1527589245804.0,
+                "end" : 1527589245805.0
             }, 
             {
                 "name" : "End",
                 "type" : "endEvent",
-                "begin" : 1527589528463.0,
-                "end" : 1527589528464.0
+                "begin" : 1527589245806.0,
+                "end" : 1527589245807.0
             }
         ],
         "createdAt" : 1527589244347.0,

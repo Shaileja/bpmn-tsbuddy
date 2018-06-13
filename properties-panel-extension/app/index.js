@@ -5,6 +5,10 @@ import propertiesPanelModule from 'bpmn-js-properties-panel';
 import propertiesProviderModule from './provider/magic';
 import magicModdleDescriptor from './descriptors/magic';
 import processhistory from './descriptors/processhistory';
+
+//var processhistory;
+var urldata;
+
 import {
   debounce
 } from 'min-dash';
@@ -12,6 +16,7 @@ import {
 import diagramXML from '../resources/newDiagram.bpmn';
 
 var container = $('#js-drop-zone');
+
 
 
 var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
@@ -33,10 +38,14 @@ function createNewDiagram() {
   openDiagram(diagramXML);
 }
 
+var myObj;
 function openDiagram(xml) {
-
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var c = url.searchParams.get("c");
+  var ab = JSON.parse(c);
+  console.log(c);
   bpmnModeler.importXML(xml, function(err) {
-
     if (err) {
       container
         .removeClass('with-diagram')
@@ -52,7 +61,8 @@ function openDiagram(xml) {
     }
 console.log(getBusinessObject);
 // logging history
-
+var propertiesPanel = $('#bpp-properties');
+console.log(propertiesPanel);
 var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8;'><br>";
   /*
 myObj = {
@@ -67,11 +77,9 @@ myObj = {
 
 */
 
-var myObj= processhistory;
-
+myObj =ab;
    
 for (i in myObj.process.history.historyEntries) {
-
     x += "<div class=history-list  style='border: 1px solid #CCC'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
   // x += '<h3><a  onclick= "function(){alert('hello');}" > '+myObj.process.history.historyEntries[i].name +"</a></h3>";
    
@@ -79,7 +87,9 @@ for (i in myObj.process.history.historyEntries) {
 
     //x += "<h3><a  onclick="+"''"focusElement("+'hekkkkkkkk'+")' id="+  myObj.process.history.historyEntries[i].name +" > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
      // x += "<h3 id= "+  myObj.process.history.historyEntries[i].type +" >"+ myObj.process.history.historyEntries[i].name +"</h3>";
-    x += "<li> Name: " + myObj.process.history.historyEntries[i].name + "</li>";
+   x+= "<li> User: " + myObj.process.history.historyEntries[i].user + "</li>";
+   x+="<li> Role: " + myObj.process.history.historyEntries[i].role + "</li>";
+     x += "<li> Name: " + myObj.process.history.historyEntries[i].name + "</li>";
     x += "<li> Type: " + myObj.process.history.historyEntries[i].type + "</li>";
     x += "<li>Begin:" + myObj.process.history.historyEntries[i].begin + "</li>";
     x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li></div><br>";
