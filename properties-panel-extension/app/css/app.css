@@ -16,7 +16,11 @@ body, html {
 a:link {
   text-decoration: none;
 }
-
+.elementblock
+{
+  margin-left: 26px;
+  margin-bottom: 9px;
+}
 .content,
 .content > div {
   width: 100%;

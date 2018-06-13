@@ -102,6 +102,7 @@ export default function(group, element) {
     }));
   }
 */
+ /*
   for(var index=0;index<role.length;index++){
     
   group.entries.push(entryFactory.checkbox({
@@ -158,7 +159,7 @@ group.entries.push(entryFactory.textBox({
   label : 'Description',
   modelProperty : 'Description'
 }));
- /*
+
  
   
   

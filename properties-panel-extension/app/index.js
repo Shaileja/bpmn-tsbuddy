@@ -63,7 +63,7 @@ console.log(getBusinessObject);
 // logging history
 var propertiesPanel = $('#bpp-properties');
 console.log(propertiesPanel);
-var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8;'><br>";
+var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8; list-style-type: none;'><br>";
   /*
 myObj = {
     "name":"John",
@@ -80,7 +80,7 @@ myObj = {
 myObj =ab;
    
 for (i in myObj.process.history.historyEntries) {
-    x += "<div class=history-list  style='border: 1px solid #CCC'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
+    x += "<div class=history-list  style='border: 1px solid #CCC'><div style='margin: 0 0 6px 11px;'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
   // x += '<h3><a  onclick= "function(){alert('hello');}" > '+myObj.process.history.historyEntries[i].name +"</a></h3>";
    
    //x += "<div id="+ myObj.process.history.historyEntries[i].type  +"><strong>"  +"<strong></div>";
@@ -92,7 +92,7 @@ for (i in myObj.process.history.historyEntries) {
      x += "<li> Name: " + myObj.process.history.historyEntries[i].name + "</li>";
     x += "<li> Type: " + myObj.process.history.historyEntries[i].type + "</li>";
     x += "<li>Begin:" + myObj.process.history.historyEntries[i].begin + "</li>";
-    x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li></div><br>";
+    x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li></div></div><br>";
     
     /*
     for (j in myObj.cars[i].models) {
@@ -128,7 +128,7 @@ events.forEach(function(event) {
   eventBus.on(event, function(e) {
     console.log(e.element.id);
     var h = document.getElementById(e.element.id);
-    h.focus();
+    h.focus().css('background-color','pink');
     //alert(h);
     //h.style.color = 'red';
     
