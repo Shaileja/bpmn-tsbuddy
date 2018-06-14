@@ -128,7 +128,7 @@ events.forEach(function(event) {
   eventBus.on(event, function(e) {
     console.log(e.element.id);
     var h = document.getElementById(e.element.id);
-    h.focus().css('background-color','pink');
+    h.focus();
     //alert(h);
     //h.style.color = 'red';
     
@@ -321,7 +321,6 @@ $('#demo').click(function(e) {
   console.log(endEventNode);
   $('#js-canvas [data-element-id=Start]').click();
 });
-
 */
 
 
