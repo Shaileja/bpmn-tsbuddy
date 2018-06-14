@@ -150,15 +150,10 @@ if (!window.FileList || !window.FileReader) {
 }
 
 // bootstrap diagram functions
-
+createNewDiagram();
 $(function() {
+   
 
-  $('#js-create-diagram').click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-
-    createNewDiagram();
-  });
 
   $('#demo').click(function(e) {
     e.stopPropagation();

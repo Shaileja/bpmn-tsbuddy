@@ -87,14 +87,14 @@ export default function CustomPropertiesProvider(
       groups: createGeneralTabGroups(element, bpmnFactory, elementRegistry, translate)
     };
 
-    // The "magic" tab
+    // The "CUSTOM" tab
     var customTab = {
       id: 'custom',
       label: 'Custom Tab',
       groups: createCustomTabGroups(element,translate,elementRegistry)
     };
 
-    // Show general + "magic" tab
+    // Show general + "CUSTOM" tab
     return [
       //generalTab,
       customTab//,generalTab
