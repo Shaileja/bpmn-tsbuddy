@@ -22,9 +22,6 @@ var container = $('#js-drop-zone');
 var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 var bpmnModeler = new BpmnModeler({
   container: '#js-canvas',
-  propertiesPanel: {
-    parent: '#js-properties-panel'
-  },
   additionalModules: [
     propertiesPanelModule,
     propertiesProviderModule
@@ -64,29 +61,12 @@ console.log(getBusinessObject);
 var propertiesPanel = $('#bpp-properties');
 console.log(propertiesPanel);
 var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8; list-style-type: none;'><br>";
-  /*
-myObj = {
-    "name":"John",
-    "age":30,
-    "cars": [
-        { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
-        { "name":"BMW", "models":[ "320", "X3", "X5" ] },
-        { "name":"Fiat", "models":[ "500", "Panda" ] }
-    ]
-}
-
-*/
-
+ 
 myObj =ab;
    
 for (i in myObj.process.history.historyEntries) {
     x += "<div class=history-list  style='border: 1px solid #CCC'><div style='margin: 0 0 6px 11px;'><h3><a id="+  myObj.process.history.historyEntries[i].name +" href='' > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
-  // x += '<h3><a  onclick= "function(){alert('hello');}" > '+myObj.process.history.historyEntries[i].name +"</a></h3>";
-   
-   //x += "<div id="+ myObj.process.history.historyEntries[i].type  +"><strong>"  +"<strong></div>";
-
-    //x += "<h3><a  onclick="+"''"focusElement("+'hekkkkkkkk'+")' id="+  myObj.process.history.historyEntries[i].name +" > "+myObj.process.history.historyEntries[i].name +"</a></h3>";
-     // x += "<h3 id= "+  myObj.process.history.historyEntries[i].type +" >"+ myObj.process.history.historyEntries[i].name +"</h3>";
+ 
    x+= "<li> User: " + myObj.process.history.historyEntries[i].user + "</li>";
    x+="<li> Role: " + myObj.process.history.historyEntries[i].role + "</li>";
      x += "<li> Name: " + myObj.process.history.historyEntries[i].name + "</li>";
@@ -94,21 +74,11 @@ for (i in myObj.process.history.historyEntries) {
     x += "<li>Begin:" + myObj.process.history.historyEntries[i].begin + "</li>";
     x += "<li> End:" + myObj.process.history.historyEntries[i].end + "</li></div></div><br>";
     
-    /*
-    for (j in myObj.cars[i].models) {
-        x += myObj.cars[i].models[j] + "<br>";
-    }
-    */
+   
 }
 x+="</ul>";
 document.getElementById("demo").innerHTML = x;
-/*
-var text = 'ddddd';
-$(document).click(function(event) {
-  text = $(event.target).text();
-  console.log(text);
-});
-*/
+
 
 
 
@@ -215,15 +185,9 @@ if (!window.FileList || !window.FileReader) {
 }
 
 // bootstrap diagram functions
-
+createNewDiagram();
 $(function() {
 
-  $('#js-create-diagram').click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-
-    createNewDiagram();
-  });
 
   $('#demo').click(function(e) {
     e.stopPropagation();
