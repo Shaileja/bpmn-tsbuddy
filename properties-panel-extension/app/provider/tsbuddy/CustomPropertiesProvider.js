@@ -88,7 +88,7 @@ export default function CustomPropertiesProvider(
     };
 
     // The "magic" tab
-    var magicTab = {
+    var customTab = {
       id: 'custom',
       label: 'Custom Tab',
       groups: createCustomTabGroups(element,translate,elementRegistry)
@@ -97,7 +97,7 @@ export default function CustomPropertiesProvider(
     // Show general + "magic" tab
     return [
       //generalTab,
-      magicTab//,generalTab
+      customTab//,generalTab
     ];
   };
 }
