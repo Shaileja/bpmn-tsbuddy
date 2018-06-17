@@ -1,4 +1,28 @@
 {"process" : {
+    "states":{
+    "Start":{
+    "process-name":"Start",
+    "process-id":"12222222",
+    "process-permission":"HR"
+    },
+    "End":{
+        "process-name":"End",
+        "process-id":"12222222",
+        "process-permission":"HR"
+        },
+        "Request":{
+            "process-name":"End",
+            "process-id":"12222222",
+            "process-permission":"HR"
+            },
+            "Review":{
+                "process-name":"End",
+                "process-id":"12222222",
+                "process-permission":"HR"
+                }
+
+},
+
     "state" : {
         "tokens" : []
     },

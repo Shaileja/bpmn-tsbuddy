@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bpmn-js-properties-panel extension demo</title>
+
+  <link rel="stylesheet" href="css/diagram-js.css" />
+  <link rel="stylesheet" href="vendor/bpmn-font/css/bpmn-embedded.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+</head>
+<body>
+
+    <div id="js-properties-panel">
+<form id='myform' >
+
+
+      <div class="Start">
+          <h1>Start</h1>
+        <label for="Start-procees-name">Name</label>
+        <input type="text" id="Start-process-name">
+        </div>
+        <hr>
+        <div>
+            <label for="Start-procees-id">Name</label>
+        <input type="text" id="Start-process-id">
+        </div>
+        <div>
+            <label for="Start-procees-permission">Name</label>
+          <input type="text" id="Start-process-permission">
+          </div>
+
+    
+          <div class="Request">
+            <h1>Request</h1>
+          <label for="Request-procees-name">Name</label>
+          <input type="text" id="Request-process-name">
+          </div>
+          <hr>
+          <div>
+              <label for="Request-procees-id">Name</label>
+          <input type="text" id="Request-process-id">
+          </div>
+          <div>
+              <label for="Request-procees-permission">Name</label>
+            <input type="text" id="Request-process-permission">
+            </div>
+
+      
+      <div class="Review">
+              <h1>Start</h1>
+            <label for="Review-procees-name">Name</label>
+            <input type="text" id="Review-process-name">
+            </div>
+            <hr>
+            <div>
+                <label for="Review-procees-id">Name</label>
+            <input type="text" id="Review-process-id">
+            </div>
+            <div>
+                <label for="Review-procees-permission">Name</label>
+              <input type="text" id="Review-process-permission">
+              </div>
+    
+    <div class="End">
+      <h1>End</h1>
+      <label for="End-procees-name">Name</label>
+      <input type="text" id="End-process-name">
+      </div>
+      <hr>
+      <div>
+          <label for="End-procees-id">Name</label>
+      <input type="text" id="End-process-id">
+      </div>
+      <div>
+          <label for="End-procees-permission">Name</label>
+        <input type="text" id="End-process-permission">
+        </div>
+        <input type="button" id='bt1' name="submit" value="submit">
+      </form>
+  </div>
+
+ 
+
+
+  <script >
+ 
+var processhistory ={"process" : {
+    "states":{
+    "Start":{
+    "process-name":"Start",
+    "process-id":"12222222",
+    "process-permission":"HR"
+    },
+    "End":{
+        "process-name":"End",
+        "process-id":"12222222",
+        "process-permission":"HR"
+        },
+        "Request":{
+            "process-name":"End",
+            "process-id":"12222222",
+            "process-permission":"HR"
+            },
+            "Review":{
+                "process-name":"End",
+                "process-id":"12222222",
+                "process-permission":"HR"
+                }
+
+},
+
+    "state" : {
+        "tokens" : []
+    },
+    "history" : {
+        "historyEntries" : [ 
+            {
+                "name" : "Start",
+                "type" : "startEvent",
+                "begin" : 1527589244348.0,
+                "end" : 1527589244354.0
+            }, 
+            {
+                "name" : "Request",
+                "type" : "userTask",
+                "begin" : 1527589244354.0,
+                "end" : 1527589474782.0
+            }, 
+            {
+                "name" : "Review",
+                "type" : "userTask",
+                "begin" : 1527589474782.0,
+                "end" : 1527589528463.0
+            }, 
+            {
+                "name" : "End",
+                "type" : "endEvent",
+                "begin" : 1527589528463.0,
+                "end" : 1527589528464.0
+            }
+        ],
+        "createdAt" : 1527589244347.0,
+        "finishedAt" : 1527589528464.0
+    },
+    "properties" : {}
+}};
+
+
+var dat =processhistory.process.states;//[element];
+//console.log(dat);
+ var dt='{"var1":"1","var2":"2"}';
+ var data=dat;
+      var i;     
+//console.log(data);
+//console.log(data['Start']);
+for(i in data){
+var ids='#'+i+'-process-name';
+console.log(ids);
+console.log(data[i]);
+         if (data) {
+            var a=document.getElementById(i+'-process-name');
+            a.value=data[i]["process-name"];
+            }
+            if (data) {
+                var b=document.getElementById(i+'-process-id');
+                b.value=data[i]["process-id"];
+            }
+            if (data) {
+                var c=document.getElementById(i+'-process-permission');
+                c.value=data[i]["process-permission"];
+         }
+       }
+       var json = {"form": []};
+$("form").each( function(){
+   // var json = {"form": []};
+    $(this).find("input").each( function(){
+        var input = {};
+        $.each(this.attributes, function(){
+            if(this.specified){
+                input[this.name] = this.value;   
+            }
+        });
+        json.form.push(input);
+    });    
+    console.log(json);
+}); 
+var formData = JSON.stringify($("#myForm").serializeArray());
+$('#bt1').click(function() {
+    console.log("submitted");
+$.ajax({
+  type: "POST",
+  url: 'http://localhost:9013',
+  data: formData,
+  success: function(){console.log("success");},
+  dataType: "json",
+  contentType : "application/json"
+});
+});
+
+  </script>
+</html>

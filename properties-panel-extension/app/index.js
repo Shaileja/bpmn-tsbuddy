@@ -4,6 +4,7 @@ import BpmnModeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
 import propertiesProviderModule from './provider/magic';
 import magicModdleDescriptor from './descriptors/magic';
+import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
 import processhistory from './descriptors/processhistory';
 import {
   debounce
@@ -15,15 +16,14 @@ var container = $('#js-drop-zone');
 
 var bpmnModeler = new BpmnModeler({
   container: '#js-canvas',
-  propertiesPanel: {
-    parent: '#js-properties-panel'
-  },
+  
   additionalModules: [
     propertiesPanelModule,
     propertiesProviderModule
   ],
   moddleExtensions: {
-    magic: magicModdleDescriptor
+    magic: magicModdleDescriptor,
+    camunda: camundaModdleDescriptor
   }
 });
 
@@ -48,6 +48,7 @@ function openDiagram(xml) {
         .removeClass('with-error')
         .addClass('with-diagram');
     }
+
 
 // logging history
 
@@ -115,8 +116,40 @@ events.forEach(function(event) {
 
   eventBus.on(event, function(e) {
     console.log(e.element.id);
+    console.log(e.element);
     var h = document.getElementById(e.element.id);
     h.focus();
+    //set form values according to current node
+
+    $(document).ready(function() {
+      $.ajaxSetup({cache: false});
+      
+   var element= e.element.businessObject.name;
+   console.log(element);
+   var dat =processhistory.process.states;//[element];
+   console.log(dat);
+    var dt='{"var1":"1","var2":"2"}';
+               var data=dat;
+              
+console.log(data);
+console.log(data['Start']);
+for(i in data){
+ var ids='#'+i+'-process-name';
+ console.log(ids);
+ console.log(data[i]);
+            if (data) {
+                   $(ids).val(data[i]["process-name"]);
+               }
+               if (data) {
+                   $('#'+i+'-process-id').val(data[i]["process-id"]);
+               }
+               if (data) {
+                $('#'+i+'-process-permission').val(data[i]["process-permission"]);
+            }
+          }
+  });
+  
+
     //alert(h);
     //h.style.color = 'red';
     
@@ -343,7 +376,32 @@ $file.on('change', function() {
 
 });
 
+/*
+$(document).ready(function() {
+  $("#btn").click(function(e){
+   var jsonData = {"ssssssssssss":"sss"};
+   console.log(jsonData);
+   var formData = $("#myform").serializeArray();
+   console.log(formData);
+   
+   $.each(formData, function() {
+        if (jsonData[this.name]) {
+           if (!jsonData[this.name].push) {
+               jsonData[this.name] = [jsonData[this.name]];
+           }
+           jsonData[this.name].push(this.value || '');
+       } else {
+           jsonData[this.name] = this.value || '';
+       }
+         
+     
+   });
+   console.log(jsonData);
 
+    e.preventDefault();	
+});
+});
+*/
 
 
 

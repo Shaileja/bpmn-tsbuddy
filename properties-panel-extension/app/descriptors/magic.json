@@ -1,6 +1,6 @@
 {
-  "name": "Magic",
-  "prefix": "magic",
+  "name": "Custom",
+  "prefix": "custom",
   "uri": "http://magic",
   "xml": {
     "tagAlias": "lowerCase"
@@ -10,7 +10,7 @@
     {
       "name": "BewitchedStartEvent",
       "extends": [
-        "bpmn:StartEvent"
+        "bpmn:BaseElement"
       ],
       "properties": [
         {
@@ -18,6 +18,22 @@
           "isAttr": true,
           "type": "String"
         },
+        {
+          "name": "state",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "role",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "view",
+          "isAttr": true,
+          "type": "String"
+        }
+        
       ]
     },
   ]

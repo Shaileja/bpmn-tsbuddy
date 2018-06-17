@@ -10,6 +10,10 @@ import linkProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/LinkProp
 import documentationProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/DocumentationProps';
 import idProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/IdProps';
 import nameProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/NameProps';
+import SequenceFlowProp from 'bpmn-js-properties-panel/lib/provider/camunda/parts/SequenceFlowProps';
+import UserTaskProp from 'bpmn-js-properties-panel/lib/provider/camunda/parts/UserTaskProps';
+import PropertiesProp from 'bpmn-js-properties-panel/lib/provider/camunda/parts/PropertiesProps';
+//import nameProps from 'bpmn-js-properties-panel/lib/provider/camunda/parts/NameProps';
 
 
 // Require your custom property entries.
@@ -53,7 +57,7 @@ function createGeneralTabGroups(element, bpmnFactory, elementRegistry, translate
 }
 
 // Create the custom magic tab
-function  createCustomTabGroups(element,translate,elementRegistry){
+function  createCustomTabGroups(element,bpmnFactory, translate,elementRegistry){
 
   // Create a group called "Black Magic".
   var CustomGroup = {
@@ -65,6 +69,9 @@ function  createCustomTabGroups(element,translate,elementRegistry){
   idProps(CustomGroup, element, translate);
   nameProps(CustomGroup, element, translate);
   processProps(CustomGroup, element, translate);
+  SequenceFlowProp(CustomGroup, element,bpmnFactory, translate);
+  UserTaskProp(CustomGroup, element,bpmnFactory, translate);
+  PropertiesProp(CustomGroup, element,bpmnFactory, translate);
   // Add the spell props to the black magic group.
   spellProps(CustomGroup, element);
 
@@ -91,7 +98,7 @@ export default function CustomPropertiesProvider(
     var magicTab = {
       id: 'custom',
       label: 'Custom Tab',
-      groups: createCustomTabGroups(element,translate,elementRegistry)
+      groups: createCustomTabGroups(element,bpmnFactory,translate,elementRegistry)
     };
 
     // Show general + "magic" tab

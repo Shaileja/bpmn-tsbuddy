@@ -27,14 +27,87 @@
       </div>
     </div>
 
-    <div class="canvas" id="js-canvas"></div>
-    <div id="js-properties-panel"></div>
+    <div class="canvas" id="js-canvas">
+      <p><strong><h2>Work Flow History</h2></strong></p>
+      <p id="demo"></p>
+    </div>
+    <div id="js-properties-panel">
+<form target='/bpmnPropertiesForm.html' method='GET'>
 
+
+      <div class="Start">
+          <h1>Start</h1>
+        <label for="Start-procees-name">Name</label>
+        <input type="text" id="Start-process-name">
+        </div>
+        <hr>
+        <div>
+            <label for="Start-procees-id">Name</label>
+        <input type="text" id="Start-process-id">
+        </div>
+        <div>
+            <label for="Start-procees-permission">Name</label>
+          <input type="text" id="Start-process-permission">
+          </div>
+
+    
+          <div class="Request">
+            <h1>Request</h1>
+          <label for="Request-procees-name">Name</label>
+          <input type="text" id="Request-process-name">
+          </div>
+          <hr>
+          <div>
+              <label for="Request-procees-id">Name</label>
+          <input type="text" id="Request-process-id">
+          </div>
+          <div>
+              <label for="Request-procees-permission">Name</label>
+            <input type="text" id="Request-process-permission">
+            </div>
+
+      
+      <div class="Review">
+              <h1>Start</h1>
+            <label for="Review-procees-name">Name</label>
+            <input type="text" id="Review-process-name">
+            </div>
+            <hr>
+            <div>
+                <label for="Review-procees-id">Name</label>
+            <input type="text" id="Review-process-id">
+            </div>
+            <div>
+                <label for="Review-procees-permission">Name</label>
+              <input type="text" id="Review-process-permission">
+              </div>
+    
+    <div class="End">
+      <h1>End</h1>
+      <label for="End-procees-name">Name</label>
+      <input type="text" id="End-process-name">
+      </div>
+      <hr>
+      <div>
+          <label for="End-procees-id">Name</label>
+      <input type="text" id="End-process-id">
+      </div>
+      <div>
+          <label for="End-procees-permission">Name</label>
+        <input type="text" id="End-process-permission">
+        </div>
+        <a href="bpmnPropertiesForm.html"><input type="button" name="submit" value="submit"></a>
+      </form>
   </div>
+
+    </div>
+   
+  </div>
+
   <div class="entry">
     <input type="file" data-open-file value="open"  name="Open Diagram" />
     </div>
-  <ul class="buttons">
+  <ul class="buttons" id="btn">
     <li>
       download
     </li>
@@ -49,11 +122,6 @@
       </a>
     </li>
   </ul>
-
-
-<p><strong><h2>Work Flow History</h2></strong></p>
-
-<p id="demo"></p>
 
 
   <script src="index.js"></script>

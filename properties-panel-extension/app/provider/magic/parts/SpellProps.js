@@ -83,10 +83,10 @@ export default function(group, element) {
   }
 
   group.entries.push(entryFactory.selectBox({
-    id : 'history',
-    description : 'history',
-    label : 'history entries',
-    modelProperty : 'history',
+    id : 'view',
+    description : 'view',
+    label : 'view entries',
+    modelProperty : 'view',
     selectOptions: hist,
     emptyParameter: false,
   }));
@@ -128,7 +128,7 @@ export default function(group, element) {
     label : 'Permission',
     modelProperty : 'permission'
   }));
-/*
+
     group.entries.push(entryFactory.textField({
       id : 'spell',
       description : 'Apply a black magic spell',
@@ -136,5 +136,4 @@ export default function(group, element) {
       modelProperty : 'spell'
     }));
     
-*/
 }
