@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <div class="content" id="js-drop-zone">
+  <div class="content" id="js-drop-zone"  style="height:400px; width:1000px;" >
 
     <div class="message error">
       <div class="note">
@@ -26,33 +26,11 @@
       </div>
     </div>
 
-    <div class="canvas" id="js-canvas"></div>
-    <div id="js-properties-panel"></div>
-
+    <div class="canvas" style="height:400px; width:1000px;" id="js-canvas"></div>
   </div>
-  <div class="entry">
-    <input type="file" data-open-file value="open"  name="Open Diagram" />
-    </div>
-  
-
-
-<p><strong><h2>Work Flow History</h2></strong></p>
-
-<p id="demo"></p>
+<p style="width:700px;"><strong><h2>Work Flow History</h2></strong></p>
+<p id="demo" style="width:800px;"></p>
 <div class="download">
-<ul class="buttons">
-  <li>
-    <a id="js-download-diagram" href title="download BPMN diagram">
-      BPMN diagram
-    </a>
-  </li>
-  <li>
-    <a id="js-download-svg" href title="download as SVG image">
-      SVG image
-    </a>
-  </li>
-</ul>
 </div>
-
   <script src="index.js"></script>
 </html>

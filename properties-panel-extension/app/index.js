@@ -19,7 +19,7 @@ var getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 var bpmnModeler = new BpmnModeler({
   container: '#js-canvas',
   propertiesPanel: {
-    parent: '#js-properties-panel'
+    //parent: '#js-properties-panel'
   },
   additionalModules: [
     propertiesPanelModule,
@@ -55,7 +55,7 @@ function openDiagram(xml) {
 // logging history
 var propertiesPanel = $('#bpp-properties');
 
-var myObj, i, j, x = "<ul style='border: 1px solid black ;background: #f8f8f8; box-shadow: 0 0 2px 1px #f8f8f8; list-style-type: none;'><br>";
+var myObj, i, j, x = "<ul style='border: 1px solid #CCC ; box-shadow: 0 0 2px 1px #f8f8f8; list-style-type: none;'><br>";
 
 myObj =ab;
    

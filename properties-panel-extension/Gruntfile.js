@@ -114,7 +114,7 @@ module.exports = function(grunt) {
         options: {
           port: 9013,
           livereload: true,
-          hostname: '10.101.21.175',
+          hostname: 'localhost',//'10.101.21.175',
           open: true,
           base: [
             'dist'
